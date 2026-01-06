@@ -1,0 +1,609 @@
+/* ===========================
+   GLOBAL
+=========================== */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: #F8F9FC;
+    color: #1E1E1E;
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
+
+html[dir="rtl"] body { text-align: right; }
+html[dir="ltr"] body { text-align: left; }
+
+h1, h2, h3 {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+.btn, .price-btn, .contact-btn {
+    display: inline-block;
+    background: #4A6CF7;
+    color: #fff;
+    padding: 14px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover,
+.price-btn:hover,
+.contact-btn:hover {
+    background: #3d5ae0;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-family: 'Cairo', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1E1E1E;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4A6CF7;
+}
+
+/* Language Toggle */
+.lang-toggle {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 6px 14px;
+    background: #4A6CF7;
+    color: #fff;
+    border-radius: 8px;
+    margin-right: 15px;
+    user-select: none;
+    transition: 0.3s;
+}
+
+.lang-toggle:hover {
+    background: #3d5ae0;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 15px;
+    user-select: none;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ===========================
+   MOBILE MENU
+=========================== */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    width: 260px;
+    height: 100%;
+    background: #FFFFFF;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: 0.3s; /* هذا فقط للظهور والاختفاء، وليس انزلاق */
+    z-index: 2000;
+}
+
+/* RTL */
+html[dir="rtl"] .mobile-menu {
+    right: -260px;
+    left: auto;
+}
+
+/* LTR */
+html[dir="ltr"] .mobile-menu {
+    left: -260px;
+    right: auto;
+}
+
+html[dir="rtl"] .mobile-menu { right: -260px; }
+html[dir="ltr"] .mobile-menu { left: -260px; }
+
+.mobile-menu a {
+    text-decoration: none;
+    color: #1E1E1E;
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: none;
+    z-index: 1500;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+.about {
+    background: #fff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.avatar {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: #ddd;
+}
+
+.values {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* ===========================
+   LUMA SECTION
+=========================== */
+.luma {
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.luma-text {
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+    font-size: 18px;
+}
+
+.luma-values {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    padding: 24px;
+    border-radius: 16px;
+    width: 260px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===========================
+   SERVICES
+=========================== */
+.services {
+    padding: 100px 20px;
+    background: #FFFFFF;
+    text-align: center;
+}
+
+.services-subtitle {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 50px;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background: #F8F9FC;
+    width: 320px;
+    padding: 28px;
+    border-radius: 16px;
+    text-align: inherit;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+}
+
+.icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   PROCESS
+=========================== */
+.process {
+    padding: 100px 20px;
+    background: #F8F9FC;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.step {
+    background: #FFFFFF;
+    width: 260px;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.step:hover {
+    transform: translateY(-6px);
+}
+
+.step-number {
+    width: 48px;
+    height: 48px;
+    background: #4A6CF7;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: auto;
+    margin-bottom: 16px;
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+.contact {
+    padding: 100px 20px;
+    background: #F8F9FC;
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background: #FFFFFF;
+    width: 300px;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.contact-card:hover {
+    transform: translateY(-6px);
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+.footer {
+    background: #1E1E1E;
+    color: #fff;
+    padding: 60px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #333;
+    padding-top: 15px;
+}
+
+/* ===========================
+   DARK MODE
+=========================== */
+body.dark {
+    background: #121212;
+    color: #e6e6e6;
+}
+body.dark .nav-logo a::before {
+    color: #A8C1FF; /* لون أفتح يناسب الوضع الداكن */
+}
+body.dark .nav-logo a {
+    color: #ffffff !important;
+}
+body.dark .navbar {
+    background: #1e1e1e;
+}
+
+body.dark .mobile-menu {
+    background: #1e1e1e;
+}
+
+body.dark .mobile-menu a {
+    color: #ddd;
+    border-bottom: 1px solid #333;
+}
+
+body.dark .card,
+body.dark .service-card,
+body.dark .price-card,
+body.dark .contact-card,
+body.dark .step {
+    background: #1e1e1e;
+}
+
+body.dark .footer {
+    background: #000;
+}
+body.dark .footer h3 {
+    color: #ffffff !important;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+
+    h1 { font-size: 30px; }
+    h2 { font-size: 26px; }
+
+    .nav-links { display: none; }
+    .hamburger { display: block; }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .values {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .services-grid,
+    .pricing-grid,
+    .contact-grid,
+    .process-steps,
+    .luma-values {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card,
+    .price-card,
+    .contact-card,
+    .step,
+    .card {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .mobile-menu {
+        width: 240px;
+        padding: 30px 20px;
+    }
+}
+.nav-logo a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.nav-logo a::before {
+    content: "✦";
+    color: #4A6CF7;
+    font-size: 20px;
+}
+@media (max-width: 480px) {
+    body {
+        font-size: 17px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+}
+@media (max-width: 480px) {
+    section {
+        padding: 40px 20px;
+    }
+
+    .service-card {
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .service-card {
+        width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .mobile-menu a {
+        font-size: 18px;
+        padding: 12px 0;
+    }
+}
+@media (max-width: 480px) {
+    .hamburger {
+        width: 32px;
+        height: 32px;
+    }
+}
+@media (max-width: 480px) {
+    .nav-logo a {
+        font-size: 24px;
+    }
+}
+.call-now {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4A6CF7;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 3000;
+    display: none; /* يظهر فقط على الجوال */
+    text-decoration: none;
+}
+
+/* يظهر فقط على الشاشات الصغيرة */
+@media (max-width: 600px) {
+    .call-now {
+        display: block;
+    }
+}
+
+/* Dark Mode */
+body.dark .call-now {
+    background: #A8C1FF;
+    color: #000;
+}
+@media (max-width: 600px) {
+    footer {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+@media (max-width: 600px) {
+    footer h3 {
+        font-size: 20px;
+    }
+
+    footer p,
+    footer a {
+        font-size: 16px;
+    }
+}
+@media (max-width: 600px) {
+    .footer-links a {
+        padding: 10px 0;
+        display: block;
+    }
+}
+@media (max-width: 600px) {
+    footer h3[data-key="brand"] {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+}
+body.dark footer {
+    background: #1a1a1a;
+    color: #e6e6e6;
+} 
