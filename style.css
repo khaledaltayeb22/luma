@@ -606,4 +606,123 @@ body.dark .call-now {
 body.dark footer {
     background: #1a1a1a;
     color: #e6e6e6;
-} 
+}
+/* بطاقة التواصل */
+.contact-card {
+    background: linear-gradient(135deg, #4f8bff 0%, #8a5bff 100%);
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    max-width: 420px;
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover على البطاقة */
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+}
+
+/* عناصر التواصل */
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    transition: 0.3s ease;
+    backdrop-filter: blur(4px);
+}
+
+/* أيقونات */
+.contact-item i {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+/* Hover على العناصر */
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateX(6px);
+}
+
+/* زر تواصل الآن */
+.contact-button {
+    margin-top: 10px;
+    text-align: center;
+    background: #ffffff;
+    color: #4f3cff;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.contact-button:hover {
+    background: #e9e6ff;
+    transform: translateY(-3px);
+}
+
+/* 🌙 Dark Mode تلقائي */
+@media (prefers-color-scheme: dark) {
+    .contact-card {
+        background: linear-gradient(135deg, #2d3a5f 0%, #4b2f7f 100%);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-item {
+        background: rgba(255, 255, 255, 0.10);
+        color: #fff;
+    }
+
+    .contact-item:hover {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .contact-button {
+        background: #ffffff;
+        color: #3a2cff;
+    }
+
+    .contact-button:hover {
+        background: #dcd7ff;
+    }
+}
+.contact-item i.fab.fa-tiktok {
+    color: #000;
+}
+.contact-item i.fab.fa-facebook {
+    color: #1877f2;
+}
+
+/* Instagram */
+.contact-item i.fab.fa-instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* WhatsApp */
+.contact-item i.fab.fa-whatsapp {
+    color: #25D366;
+}
+
+/* Email (Envelope) */
+.contact-item i.fas.fa-envelope {
+    color: #D44638; /* Gmail red */
+}
+
+/* Twitter (X) */
+.contact-item i.fab.fa-x-twitter {
+    color: #000000;
+}
